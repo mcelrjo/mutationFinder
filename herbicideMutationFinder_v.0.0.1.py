@@ -7,7 +7,7 @@ from Bio import pairwise2, SeqIO
 
 # Get input filename from command line arguments
 seqFile = sys.argv[1]
-target = sys.argv[2]
+#target = sys.argv[2]
 try:
     inFile = SeqIO.read(seqFile, 'abi')
 except IOError:
@@ -15,6 +15,27 @@ except IOError:
     print('Spaces in directories can cause this error.  Use underscores.  Also try double quotes if not working.')
     sys.exit(1)
 
+inputTarget = raw_input("For target site enter a for alpha-tubulin, \n \
+b for acetolactate synthase, \n \
+c for acetylcoa carboxylase, \n \
+d for protoporphyrinogen oxidase, \n \
+e for epsp synthase, \n \
+Enter a selection: ")
+
+if inputTarget == 'a':
+    target = 'alpha-tubulin'
+elif inputTarget == 'b':
+    target = 'ALS'
+elif inputTarget == 'c':
+    target = 'ACCase'
+elif inputTarget == 'd':
+    target = 'PPO'
+elif inputTarget == 'e':
+    target = 'EPSP'
+else:
+    print "Error entering target site, must enter a, b, c, d or e"
+    sys.exit(1)
+    
 # seqFile = ''
 # target = ''
 # species_input = ''
@@ -35,12 +56,12 @@ except IOError:
 
 # Iterate through file, add items to database
 # Open file
-try:
-    infile = SeqIO.read(seqFile, 'abi')
-except IOError:
-    print('Error opening input file.')
-    print('Spaces in directories can cause this error.  Use underscores.  Also try double quotes if not working.')
-    sys.exit(1)
+# try:
+#     infile = SeqIO.read(seqFile, 'abi')
+# except IOError:
+#     print('Error opening input file.')
+#     print('Spaces in directories can cause this error.  Use underscores.  Also try double quotes if not working.')
+#     sys.exit(1)
 
 class resistanceMutationSearch(object):
     
@@ -310,6 +331,7 @@ SGCKAAELVISYLDSHIYVKMDEKTA'
             
     def idCorrectProtein(self):
         possibleProts = self.translator()
+        self.prot = None
         for prot in possibleProts.values():
             for seg in self.segments:
                 if seg in prot:
@@ -402,13 +424,15 @@ def mutationFinder(seq, targ):
     seq.determineTarget()
     
     seq.idCorrectProtein()
-    print seq.prot
-    
-    
-    seq.detectMutations()
-    print seq.mutationsPresent
-    print seq.specificMutations
-
+    if seq.prot != None:
+        print seq.prot
+        seq.detectMutations()
+        print seq.mutationsPresent
+        print seq.specificMutations
+    else:
+        print "Unable to translate sequence. Make sure sequence quality is good \n \
+        and check to see if you entered the correct target."
+        print "Target site selected: " + seq.targetSite
 
 if __name__ == '__main__':
     mutationFinder(str(inFile.seq), target)
