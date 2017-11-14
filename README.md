@@ -4,4 +4,4 @@
 
 ##### python herbicideMutationFinder_v.0.#.#.py <YOURABIFILEHERE>
 
-	The script is not written to accept flags at this time.  Give it a try and let me know what you think.  A batch version will be coming soon that can analyze all .ab1 files in a directory and output to a text file.
+The script is not written to accept flags at this time.  Give it a try and let me know what you think.  A batch version will be coming soon that can analyze all .ab1 files in a directory and output to a text file.
