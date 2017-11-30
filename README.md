@@ -4,4 +4,6 @@
 
 ##### python herbicideMutationFinder_v.0.#.#.py YOURABIFILEHERE.ab1
 
+herbicideMutationFinder is written to look for target site mutations in the ALS, ACCase, psbA, alpha-tubulin, PPO, and EPSP synthase DNA/RNA coding sequences. 
+
 The script is not written to accept flags at this time.  Give it a try and let me know what you think.  A batch version will be coming soon that can analyze all .ab1 files in a directory and output to a text file.

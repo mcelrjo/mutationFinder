@@ -5,15 +5,10 @@ import getopt, sys, os, re
 from Bio.Seq import Seq
 from Bio import pairwise2, SeqIO
 
-# Get input filename from command line arguments
-seqFile = sys.argv[1]
-#target = sys.argv[2]
-try:
-    inFile = SeqIO.read(seqFile, 'abi')
-except IOError:
-    print('Error opening input file.')
-    print('Spaces in directories can cause this error.  Use underscores.  Also try double quotes if not working.')
-    sys.exit(1)
+
+
+seqFile = str(raw_input('Copy and paste your DNA search string here: '))
+
 
 inputTarget = raw_input("For target site enter 'a' for alpha-tubulin, \n \
 'b' for acetolactate synthase, \n \
@@ -39,32 +34,6 @@ else:
     print "Error entering target site, must enter a, b, c, d or e"
     sys.exit(1)
     
-# seqFile = ''
-# target = ''
-# species_input = ''
-# try:
-#     opts, args = getopt.getopt(sys.argv, "hf:t:", ["ab1=", "target="])
-# except getopt.GetoptError:
-#     print('herbicideMutationFinder<VERSION>.py -f <inputAB1Files> -t <targetSite>')
-#     sys.exit(2)
-# for opt, arg in opts:
-#     if opt == '-h':
-#         print('herbicideMutationFinder<VERSION>.py -f <inputAB1Files> -t <targetSite>')
-#         sys.exit()
-#     elif opt in ("-f", "--ab1"):
-#         seqFile = arg
-#     elif opt in ("-t", "--target"):
-#         target = arg
-
-
-# Iterate through file, add items to database
-# Open file
-# try:
-#     infile = SeqIO.read(seqFile, 'abi')
-# except IOError:
-#     print('Error opening input file.')
-#     print('Spaces in directories can cause this error.  Use underscores.  Also try double quotes if not working.')
-#     sys.exit(1)
 
 class resistanceMutationSearch(object):
     
@@ -438,4 +407,4 @@ def mutationFinder(seq, targ):
         print "Target site selected: " + seq.targetSite
 
 if __name__ == '__main__':
-    mutationFinder(str(inFile.seq), target)
+    mutationFinder(seqFile, target)
