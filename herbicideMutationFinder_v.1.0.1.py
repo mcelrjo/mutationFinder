@@ -59,6 +59,7 @@ class resistanceMutationSearch(object):
             self.segments = ['MVVQ', 'ELDQQ', 'PENES', 'GGASM', 'QVPR', 'TDAF','FDDR','QWED', 'PSGG', 'GLPL']
             self.susSegments = ['GGASM', 'QVPR', 'TDAF','FDDR','QWED', 'PSGG']
             self.resSegments = {'GGASM':'GG\wSM','QVPR':'QV\wR','TDAF':'TD\wF', 'FDDR':'FD\wR',"QWED":"Q\wED", 'PSGG':'P\w\wG'}
+            self.mutName = {'GGASM': "Ala-122 position", 'QVPR': "Pro-197 position", 'TDAF': "Ala-205 position", 'FDDR': "Asp-376 position", "QWED": "Trp-574 position", "PSGG": "Ser-653 and Gly-654 positions"}
             self.compDNA = 'GCCACAGCCACAGCCACGTCCACAGCCGTCGCCATCTCGGGCGCCACCTCCGCCCTACCCAAACCCACCC\
             TCCCGCGCCACCTGCCCGCCCCACGCCGCGCCGCCCTCGCCGCCGCCACCCGCATCAGGTGCTCCACGGT\
             GTCCCCTTCGCCCGCCCCTCCCGCCACCGCGCTCCGCCCATGGGGCCCCACCGAGCCCCGCAAGGGCGCC\
@@ -101,8 +102,9 @@ class resistanceMutationSearch(object):
             self.testAccession = 'KM388812'
         if self.targetSite == "ACCase":
             self.segments = ["GREV", "PDDL", "IPENT", "VENIH", "GQVWFP", "LANWRG", "LANW","FEGIL", "LFEGILQ", "IDSKIN", "TAKGN"]
-            self.susSegments = ["VENIH", "GQVWFP", "LANWRG", "LFEGILQ", "IDSKIN"]
-            self.resSegments = {"VENIH":"VEN\wH", "GQVWFP":"GQV\wFP", "LANWRG":"LAN\wRG", "LFEGILQ":"LFEG\wLQ", "IDSKIN":"I\wSKIN", "TAKGN":"TAK\wN"}
+            self.susSegments = ["VENIH", "GQVWFP", "LANWRG", "LFEGILQ", "IECYA", "IDSKIN"]
+            self.resSegments = {"VENIH":"VEN\wH", "GQVWFP":"GQV\wFP", "LANWRG":"LAN\wRG", "LFEGILQ":"LFEG\wLQ", "IDSKIN":"I\wSKIN","IECYA": "IE\wYA", "TAKGN":"TAK\wN"}
+            self.mutName = {"VENIH": "Ile-1781 position", "GQVWFP": "Trp-1999 position", "LANWRG": "Trp-2027 position", "LFEGILQ": "Ile-2014 position", "IDSKIN": "Asp-2078 position", "IECYA": "Cys-2088 position", "TAKGN": "Gly-2096 position"}
             self.compDNA = 'GCCACAGCCACAGCCACGTCCACAGCCGTCGCCATCTCGGGCGCCACCTCCGCCCTACCCAAACCCACCC\
             TCCCGCGCCACCTGCCCGCCCCACGCCGCGCCGCCCTCGCCGCCGCCACCCGCATCAGGTGCTCCACGGT\
             GTCCCCTTCGCCCGCCCCTCCCGCCACCGCGCTCCGCCCATGGGGCCCCACCGAGCCCCGCAAGGGCGCC\
@@ -144,6 +146,7 @@ class resistanceMutationSearch(object):
             self.segments = ['GSLV', 'QYAS','RETTENES']
             self.susSegments = ['GSLV', 'QYAS']
             self.resSegments = {'GSLV': 'GSL\w', 'QYAS':'QYA\w'} # V and S are mutation sites
+            self.mutName = {"GSLV": "Val-219 position", "QYAS": "Ser-264 position"}
             self.compDNA = 'ATGATCCCTACCTTATTGACTGCAACTTCTGTATTTATTATAGCCTTCATAGCTGCTCCTCCAGTAGATA\
             TTGATGGTATTCGTGAACCTGTTTCTGGATCTCTACTTTACGGAAACAATATTATTTCGGGTGCTATTAT\
             TCCTACTTCTGCAGCTATTGGGTTGCACTTTTACCCAATCTGGGAAGCGGCATCAGTTGATGAGTGGTTA\
@@ -169,6 +172,7 @@ class resistanceMutationSearch(object):
             self.segments = ['KEEVQ', 'TAAGG', 'MRPL', 'LGNAG' ]
             self.susSegments = ['MRPL', 'LGNAG']
             self.resSegments = {'MRPL':'MR\wL', 'LGNAG':'LGNA\w'}
+            self.mutName - {'MRPL': "Pro-106 position", "LGNAG": 'Gly-101 position'}
             self.compDNA = 'GCGGAGGAGGTGGTGCTGCAGCCCATCAAGGAGATCTCCGGCGTCGTGAAGCTGCCGGGGTCCAAGTCGC\
             TCTCCAACCGGATCCTCCTGCTCTCCGCCCTCGCCGAGGTAAGAAGAAGGATCCCCCCTCCCTTTCAGAG\
             TCAATTGAAATTGGATGTGGAGATGAGATTTTACCAGGGGTTAGGTGATGATTTCCTGCTGCTGAAATGT\
@@ -216,7 +220,7 @@ class resistanceMutationSearch(object):
             ACGTGCTGAGCACTTTCGTCAAGAAC'
             self.compProt = "AEEVVLQPIKEISGVVKLPGSKSLSNRILLLSALAEGTTVVDNL\
             LNSEDVHYMLGALKTLGLSVEADKAAKRAVVVGCGGKFPVEKDAKEEVQLFLGNAGTA\
-            MRSLTAAVTAAGGNATYVLDGVPRMRERPIGDLVVGLKQLGADVDCFLGTDCPPVRVK\
+            MRPLTAAVTAAGGNATYVLDGVPRMRERPIGDLVVGLKQLGADVDCFLGTDCPPVRVK\
             GIGGLPGGKVKLSGSISSQYLSALLMAAPLALGDVEIEIIDKLISIPYVEMTLRLMER\
             FGVKAEHSDSWDRFYIKGGQKYKSPKNAYVEGDASSASYFLAGAAITGGTVTVEGCGT\
             TSLQGDVKFAEVLEMMGAKVTWTETSVTVTGPQREPFGRKHLKAIDVNMNKMPDVAMT\
@@ -228,6 +232,7 @@ class resistanceMutationSearch(object):
             self.segments = ['NEFQT', 'SLTAS', 'HFMLS', 'SAEKA', 'DVNEF']
             self.susSegments = ['SLTAS', 'HFMLS']
             self.resSegments = {'SLTAS': 'SL\wAS', 'HFMLS': 'HF\wLS'} #Thr-239-Ile, Met-268-Thr, Leu-136-Phe
+            self.mutName = {'SLTAS': 'Thr-239 position', 'HFMLS':'Met-268 position'}
             self.compDNA = 'CAGAGACAGGCGTCTTCGTACTCGCCTCTCTCCGCGACTCCAAGCTTTCTCCCTCCTCCCATTTCCCGTC\
             GCCGCCGCCTCACCCGCCCGACACCATGAGGGAGTGCATCTCGATCCACATCGGCCAGGCCGGTATCCAG\
             GTCGGAAACGCTTGCTGGGAGCTCTACTGCCTCGAGCATGGCATCCAGGCTGACGGTCAGATGCCCGGTG\
@@ -266,6 +271,7 @@ HKFDLMYAKRAFVHWYVGEGMEEGEFSEAREDLAALEKDYEEVGAEFDEGEEGDEGDEY'
             self.segments = ['VAGTCGGDP', 'QNKRYI', 'VSTKN', 'KLKSHG', 'TFPEV', 'GGENAS', 'TAPIRN']
             self.susSegments = ['GTCGGDP', 'QNKRYI']
             self.resSegments = {'GTCGGDP':'GTC\w?GDP', 'QNKRYI': 'QNK\wYI'} 
+            self.mutName = {'GTCGGDP':'Gly-210 deletion', 'QNKRYI': 'Arg-98 (or Arg-128 based on Amaranthus) location'}
             self.compDNA = 'ATGGTAATTCAATCCATTACCCACCTTTCACCAAACCTTGCATTGCCATCGCCATTGTCAGTTTCAACCA\
 AGAACTACCCAGTAGCTGTAATGGGCAACATTTCTGAGCGGGAAGAACCCACTTCTGCTAAAAGGGTTGC\
 TGTTGTTGGTGCTGGAGTTAGTGGACTTGCTGCTGCATATAAGCTAAAATCCCATGGTTTGAGTGTGACA\
@@ -401,6 +407,12 @@ def mutationFinder(seq, targ):
         seq.detectMutations()
         print seq.mutationsPresent
         print seq.specificMutations
+        for mut in seq.mutationsPresent:
+            if seq.mutationsPresent[mut] == "Mutation Present":
+                print "There is an amino acid change at "+ seq.mutName[mut] + "."
+            elif seq.mutationsPresent[mut] == "No Mutation Present":
+                print "No amino acid change detected at "+ seq.mutName[mut] + "."
+        
     else:
         print "Unable to translate sequence. Make sure sequence quality is good \n \
         and check to see if you entered the correct target."
