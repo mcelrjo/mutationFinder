@@ -316,9 +316,14 @@ SGCKAAELVISYLDSHIYVKMDEKTA'
                     self.prot = prot
                     break
     
-    def alignProteins(self):
+    def alignSequences(self):
         align = pairwise2.align.globalxx(self.compProt, self.prot)
         formattedAlignment = (pairwise2.format_alignment(*align[0]))
+        nt_align = pairwise2.align.globalxx(self.compDNA, self.sequence)
+        nt_formattedAlignment = (pairwise2.format_alignment(*align[0]))
+        
+        self.protAlignment = formattedAlignment
+        self.ntAlignment = nt_formattedAlignment
         
     def detectMutations(self):
         '''Determine if a specific mutation is present in the the selected
@@ -412,6 +417,9 @@ def mutationFinder(seq, targ):
                 print "There is an amino acid change at "+ seq.mutName[mut] + "."
             elif seq.mutationsPresent[mut] == "No Mutation Present":
                 print "No amino acid change detected at "+ seq.mutName[mut] + "."
+        seq.alignSequences()
+        print seq.protAlignment
+        print seq.ntAlignment
         
     else:
         print "Unable to translate sequence. Make sure sequence quality is good \n \
