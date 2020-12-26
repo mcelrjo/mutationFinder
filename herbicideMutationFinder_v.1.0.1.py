@@ -391,9 +391,9 @@ SGCKAAELVISYLDSHIYVKMDEKTA'
         RETURN: DICTIONARY of possible translations.
         '''
         seq = Seq(self.sequence)
+        possibleTranslations = {}
         revSeq = str(seq.reverse_complement())
         starts = [0, 1, 2]
-        possibleTranslations = {}
         num = 1
         for start in starts:
             name = "+" + str(num)

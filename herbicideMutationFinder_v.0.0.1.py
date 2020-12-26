@@ -32,7 +32,7 @@ elif inputTarget == 'c':
 elif inputTarget == 'd':
     target = 'PPO'
 elif inputTarget == 'e':
-    target = 'EPSP'
+    target = 'EPSPS'
 elif inputTarget == 'f':
     target = 'psbA'
 else:
@@ -203,7 +203,7 @@ VINTWADIINRANLGMEVMHERNAHNFPLDLAAIEAPSTNG'
             self.segments = ['KEEVQ', 'TAAGG', 'MRPL', 'LGNAG' ]
             self.susSegments = ['MRPL', 'LGNAG']
             self.resSegments = {'MRPL':'MR\wL', 'LGNAG':'LGNA\w'}
-            self.mutName - {'MRPL': "Pro-106 position", "LGNAG": 'Gly-101 position'}
+            self.mutName = {'MRPL': 'Pro-106 position', 'LGNAG': 'Gly-101 position'}
             self.compDNA = 'GCGGAGGAGGTGGTGCTGCAGCCCATCAAGGAGATCTCCGGCGTCGTGAAGCTGCCGGGGTCCAAGTCGC\
 TCTCCAACCGGATCCTCCTGCTCTCCGCCCTCGCCGAGGTAAGAAGAAGGATCCCCCCTCCCTTTCAGAG\
 TCAATTGAAATTGGATGTGGAGATGAGATTTTACCAGGGGTTAGGTGATGATTTCCTGCTGCTGAAATGT\
@@ -451,9 +451,9 @@ def mutationFinder(seq, targ):
                 print "There is an amino acid change at "+ seq.mutName[mut] + "."
             elif seq.mutationsPresent[mut] == "No Mutation Present":
                 print "No amino acid change detected at "+ seq.mutName[mut] + "."
-        seq.alignSequences()
-        print seq.protAlignment
-        print seq.ntAlignment
+        #seq.alignSequences()
+        #print seq.protAlignment
+        #print seq.ntAlignment
         
     else:
         print "Unable to translate sequence. Make sure sequence quality is good \n \
