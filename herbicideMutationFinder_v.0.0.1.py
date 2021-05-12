@@ -8,6 +8,7 @@ from Bio import pairwise2, SeqIO
 # Get input filename from command line arguments
 seqFile = sys.argv[1]
 #target = sys.argv[2]
+print(seqFile)
 try:
     inFile = SeqIO.read(seqFile, 'abi')
 except IOError:
@@ -15,7 +16,7 @@ except IOError:
     print('Spaces in directories can cause this error.  Use underscores.  Also try double quotes if not working.')
     sys.exit(1)
 
-inputTarget = raw_input("For target site enter 'a' for alpha-tubulin, \n \
+inputTarget = input("For target site enter 'a' for alpha-tubulin, \n \
 'b' for acetolactate synthase, \n \
 'c' for acetylcoa carboxylase, \n \
 'd' for protoporphyrinogen oxidase, \n \
@@ -36,7 +37,7 @@ elif inputTarget == 'e':
 elif inputTarget == 'f':
     target = 'psbA'
 else:
-    print "Error entering target site, must enter a, b, c, d or e"
+    print("Error entering target site, must enter a, b, c, d or e")
     sys.exit(1)
     
 # seqFile = ''
@@ -442,22 +443,22 @@ def mutationFinder(seq, targ):
     
     seq.idCorrectProtein()
     if seq.prot != None:
-        print seq.prot
+        print(seq.prot)
         seq.detectMutations()
-        print seq.mutationsPresent
-        print seq.specificMutations
+        print(seq.mutationsPresent)
+        print(seq.specificMutations)
         for mut in seq.mutationsPresent:
             if seq.mutationsPresent[mut] == "Mutation Present":
-                print "There is an amino acid change at "+ seq.mutName[mut] + "."
+                print("There is an amino acid change at "+ seq.mutName[mut] + ".")
             elif seq.mutationsPresent[mut] == "No Mutation Present":
-                print "No amino acid change detected at "+ seq.mutName[mut] + "."
+                print("No amino acid change detected at "+ seq.mutName[mut] + ".")
         #seq.alignSequences()
         #print seq.protAlignment
         #print seq.ntAlignment
         
     else:
-        print "Unable to translate sequence. Make sure sequence quality is good \n \
-        and check to see if you entered the correct target."
-        print "Target site selected: " + seq.targetSite
+        print("Unable to translate sequence. Make sure sequence quality is good \n \
+        and check to see if you entered the correct target.")
+        print("Target site selected: " + seq.targetSite)
 if __name__ == '__main__':
     mutationFinder(str(inFile.seq), target)
