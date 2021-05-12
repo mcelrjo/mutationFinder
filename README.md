@@ -6,17 +6,17 @@ abiMutationFinder_v.0.0.1.py is written to batch analyze abi files for mutations
 
 ### There are currently two versions.  See below for there different use.
 
-### herbicideMutationFinder_v.0.#.#.py is meant to run in command line and read in ABI files (.ab1).  Run in the command line as follows:
+#### herbicideMutationFinder_v.0.#.#.py is meant to run in command line and read in ABI files (.ab1).  Run in the command line as follows:
 
-### python herbicideMutationFinder_v.0.#.#.py YOURABIFILEHERE.ab1
+##### python herbicideMutationFinder_v.0.#.#.py YOURABIFILEHERE.ab1
 
 The script is not written to accept flags at this time.  Give it a try and let me know what you think.  A batch version will be coming soon that can analyze all .ab1 files in a directory and output to a text file.
 
-### herbicideMutationFinder_v.1.#.#.py is meant to run in command line and take RAW INPUT.  Do not pass command line argument to this version.  Instead wait for the prompts and copy and paste your sequence into the command line (Remember CTRL-Shift-V to paste) and select your target site when prompted.
+#### herbicideMutationFinder_v.1.#.#.py is meant to run in command line and take RAW INPUT.  Do not pass command line argument to this version.  Instead wait for the prompts and copy and paste your sequence into the command line (Remember CTRL-Shift-V to paste) and select your target site when prompted.
 
 Run Version 1 as follows:
 
-### python herbicideMutationFinder_v.1.0.0.py 
+##### python herbicideMutationFinder_v.1.0.0.py 
 
 This version will walk you through a series of questions to allow you to input your sequence (need to copy and paste the sequence) and select the target site of interest.  The raw input questions/prompts are as follows:
 
@@ -34,4 +34,4 @@ Followed by
 
  After a selection is made the output will immediately follow.
 
-### abiMutationFinder_v.0.0.1.py is written to take a path to a diretory of .ab1 files which will be analyzed for possible mutations. Separate files will be written for each ab1 file. 
+#### abiMutationFinder_v.0.0.1.py is written to take a path to a diretory of .ab1 files which will be analyzed for possible mutations. Separate files will be written for each ab1 file. 
