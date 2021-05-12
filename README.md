@@ -1,12 +1,19 @@
 # Scripts for finding target-site mutations in herbicide-related genes.
 
+abiMutationFinder_v.0.0.1.py is written to batch analyze abi files for mutations in ALS, ACCase, PPO, EPSPS, and psbA. Takes only a path to a directory of AB1 files.  
+
 herbicideMutationFinder is written to look for target site mutations in the ALS, ACCase, psbA, alpha-tubulin, PPO, and EPSP synthase DNA/RNA coding sequences. I am writing different versions of the script to allow for different ways to enter the sequences (using command line arguments or entering sequences via copy and paste).  Check back for updates.  Please contact me if you are using and you find this useful -- just to help keep me motivated to work on this project.
 
-abiMutationFinder_v.0.0.1.py is written to batch analyze abi files for mutations in ALS, ACCase, PPO, EPSPS, and psbA. Takes only a path to a directory of AB1 files.  
 
 ### There are currently two versions.  See below for there different use.
 
-#### herbicideMutationFinder_v.0.#.#.py is meant to run in command line and read in ABI files (.ab1).  Run in the command line as follows:
+#### abiMutationFinder 
+
+##### abiMutationFinder_v.0.0.1.py is written to take a path to a diretory of .ab1 files which will be analyzed for possible mutations. Separate files will be written for each ab1 file. 
+
+#### herbicideMutationFinder - Various Versions
+
+##### herbicideMutationFinder_v.0.#.#.py is meant to run in command line and read in ABI files (.ab1).  Run in the command line as follows:
 
 ##### python herbicideMutationFinder_v.0.#.#.py YOURABIFILEHERE.ab1
 
@@ -34,4 +41,4 @@ Followed by
 
  After a selection is made the output will immediately follow.
 
-#### abiMutationFinder_v.0.0.1.py is written to take a path to a diretory of .ab1 files which will be analyzed for possible mutations. Separate files will be written for each ab1 file. 
+
